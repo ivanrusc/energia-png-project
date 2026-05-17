@@ -20,5 +20,5 @@ sudo docker compose logs -f energia-png-generator
 ## URL esperada
 
 ```text
-https://energia.matwifi.com/solar-consum-/energia.png
+https://energia.EL-MEU-DOMINI.com/solar-consum-/energia.png
 ```
