@@ -1,0 +1,30 @@
+services:
+  energia-png-generator:
+    image: python:3.12-slim
+    container_name: energia-png-generator
+    restart: unless-stopped
+    working_dir: /app
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./app:/app
+      - ./public:/public
+    command: >
+      sh -c "pip install --no-cache-dir -r requirements.txt &&
+             python -u generate.py"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  energia-png-web:
+    image: nginx:alpine
+    container_name: energia-png-web
+    restart: unless-stopped
+    depends_on:
+      - energia-png-generator
+    ports:
+      - "8090:80"
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
