@@ -67,8 +67,14 @@ PUBLIC_SLUG = env("PUBLIC_SLUG", "solar-consum-7fK29LmQp84XzR6v")
 OUTPUT_BASE_DIR = env("OUTPUT_BASE_DIR", "/public")
 
 # Fitxers
-FILE_NAME_1 = env("FILE_NAME_1", "energia-1600x900.png")
-FILE_NAME_2 = env("FILE_NAME_2", "energia-1200x675.png")
+FILE_NAME_1 = env("FILE_NAME_1", "energia-1118x660.png")
+WIDTH_1 = int(env("WIDTH_1", "1118"))
+HEIGHT_1 = int(env("HEIGHT_1", "660"))
+
+FILE_NAME_2 = env("FILE_NAME_2", "energia-900x531.png")
+WIDTH_2 = int(env("WIDTH_2", "900"))
+HEIGHT_2 = int(env("HEIGHT_2", "531"))
+
 FILE_NAME_MAIN = env("FILE_NAME_MAIN", "energia.png")
 
 # Estil
